@@ -1,0 +1,609 @@
+<div class="property-single__inner">
+  <h1 class="property-single__title" data-title="{houseNo} {streetName}, {town}, {postcode}">{houseNo} {streetName}, {town}, {postcode}</h1>
+  <div class="type">{bedRooms} bedroom {pType}</div>
+  <ul class="property-single__tabs">
+    <li class="active"><a href="#tab-1" data-toggle="tab">Photos</a></li>
+    <li><a href="#tab-2" data-toggle="tab">Map</a></li>
+    <li><a href="#tab-3" data-toggle="tab">Streetview</a></li>
+  </ul>
+  <div class="row-fluid">
+    <div class="span12">
+        <div id="tab-1" class="detail-tab active">
+          <div class="slider-for">
+            {imgString}
+          </div>
+          <div class="slider-nav">
+            {imgString}
+          </div>
+      </div>
+      <div id="tab-2" class="detail-tab">
+        <div class="bdd-detailMapsSize">
+          <div id="bdf-propertyMap" class="bdd-detailMapsSize"> </div>
+        </div>
+          <script type="text/javascript">
+            var propertyMapData = {outputMapDataString};
+            //var locationMapData = [{localInfo}];
+            var locationMapData = '';
+            var markerURL = '{markerURL}';
+            var gmapStyle = '{gmapStyle}';
+            //Property details tabs
+          </script>
+      </div>
+      <div id="tab-3" class="detail-tab">
+        <div id="bdf-sView" class="bdd-detailMapsSize"> </div>
+        <script type="text/javascript">
+            var propertyMapData = {outputMapDataString};
+            var markerURL = '{markerURL}';
+            jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+              initializemap();
+            });
+          </script>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid row-property--details">
+    <div class="span8">
+      <h3>About the property</h3>
+      <div class="description">
+        {descText}
+        <ul class="features">
+
+        </ul>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="price">{outputAskingPrice} {letFrequency}</div>
+      <div class="statusflag bdpstatus{statusId} branch{branch_id}">{sellingStatus}</div>
+      <div class="information">
+        <h4>Information</h4>
+        <ul class="features">
+          <li>Duration:<br /> {letType}</li>
+          <li>Bedrooms<br />{bedRooms}</li>
+          <li>Bathrooms<br />{bathRooms}</li>
+          <li>Living Rooms<br />{livingRooms}</li>
+          <li>EPC<br />{epcBand}</li>
+          <li>Smokers:<br /> {smokersConsidered}</li>
+          <li>Pets Allowed:<br /> {petsAllowed}</li>
+          <!-- <li>Furnished:<br /> {letFurnType}</li>
+          <li>HMO License:<br /> {hmoLicence}</li>
+          <li>DSS:<br /> {benefitConsidered}</li>-->
+          <li>Heating:<br /> {heating}</li>
+          <li>Council Tax Band:<br /> {cTaxBand}</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h4>Contact</h4>
+        <ul class="features">
+            <li class="bump{staffNeg_proPic}"><div class="staff-photo"><img src="https://uat.bdphq.com/index.php?bdimg={staffNeg_proPic}&w=128&h=128&q=90"/></div></li>
+          <li><div class="name">{staffNeg_firstName} {staffNeg_lastName}</div></li>
+          <li><div class="number">{staffNeg_workTel1}</div></li>
+          <li><div class="email"><a href="mailto:{staffNeg_userNme}">{staffNeg_userNme}</a></div></li>
+        </ul>
+      </div>
+      <div class="resources">
+        <a class="button" href="#" data-toggle="modal" data-target="#bookViewing"><span>Book a viewing</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!------ Send to Friend form ------>
+<div class="modal" id="sendFriend" tabindex="-1" role="dialog" aria-labelledby="sendFriend" aria-hidden="true" style="display:none">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Send to a Friend</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sendFriend" class="form-horizontal bdf-sendFriendForm">
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="name">Your Name</label>
+            <div class="col-sm-7">
+              <input class="form-field" placeholder="Enter your name :" type="text" name="firstName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="email">Email address</label>
+            <div class="col-sm-7">
+              <input class=" form-field" placeholder="Enter your email :" type="email" name="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="friendsName">Friend's Name</label>
+            <div class="col-sm-7">
+              <input class="form-field" placeholder="Enter your friend's name :" type="text" name="friendsName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="friendsEmail">Friend's email </label>
+            <div class="col-sm-7">
+              <input class="form-field" placeholder="Enter your friend's email :" type="email" name="friendsEmail">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="message">Message</label>
+            <div class="col-sm-7">
+              <textarea class="form-field" placeholder="Type a message :" rows="7" name="message"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-7">
+              <button type="submit" class="btn btn-default bdf-Submit">Send message</button>
+              <button type="button" class="btn btn-default bdf-cancel" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+          <div class="commentsdcoy">
+            <label class="col-sm-3 control-label" for="comments">Leave next field empty</label>
+            <input type="text" name="comments">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------- Viewing Request  -------->
+
+<div class="modal " id="bookViewing" tabindex="-1" role="dialog" aria-labelledby="bookViewing" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Request a Viewing for:<br/>
+          {dispAddress}</h4>
+      </div>
+      <div class="modal-body">
+        <form id="bViewing" class="form-horizontal bdf-requestViewingForm">
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="name">Your First Name</label>
+            <div class="col-sm-7">
+              <input class="form-field" placeholder="Enter your first name :" type="text" name="firstName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="name">Your Last Name</label>
+            <div class="col-sm-7">
+              <input class="form-field" placeholder="Enter your last name :" type="text" name="lastName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="email">Email address</label>
+            <div class="col-sm-7">
+              <input class="form-field" placeholder="Enter your email :" type="email" name="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="tel">Phone Number</label>
+            <div class="col-sm-7">
+              <input class="form-field" placeholder="Enter your phone number" type="text" name="tel1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="message">Message</label>
+            <p style="color:#FF0000">Please indicate two preferred dates and times for viewing</p>
+            <div class="col-sm-7">
+              <textarea class="form-field" placeholder="Type a message :" rows="7" name="message"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-7">
+              <input type="hidden" name="propaddress" id="propaddress" value="{dispAddress}">
+              <input type="hidden" name="transtype" id="transtype" value="let">
+              <button type="submit" class="btn btn-default bdf-Submit">Send message</button>
+              <button type="button" class="btn btn-default bdf-cancel" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+          <div class="commentsdcoy">
+            <label class="col-sm-3 control-label" for="comments">Leave next field empty</label>
+            <input type="text" name="comments">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="makeEnquiry" tabindex="-1" role="dialog" aria-labelledby="makeEnquiry" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Make an enquiry for:<br/>
+          {dispAddress}</h4>
+      </div>
+      <div class="modal-body">
+        <form class="bdf-enquiryForm">
+          <div class="bdf-errorMsg bdd-hide alert alert-danger" role="alert"> The fields marked require information: </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control input-lg" name="name" placeholder="Enter name :" type="text">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input class="form-control input-lg" name="email" placeholder="Enter email :" type="email">
+          </div>
+          <div class="form-group">
+            <label for="tel">Tel.</label>
+            <input class="form-control input-lg" name="tel" placeholder="Enter phone number :" type="text">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control input-lg" name="message" placeholder="Type a message :" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <input class="btn btn-warning btn-lg bdf-Submit" name="submit" type="submit" value="Send Message">
+          </div>
+          <div class="commentsdcoy">
+            <label class="col-sm-3 control-label" for="comments">Leave next field empty</label>
+            <input type="text" name="comments">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+
+			initializemap();
+
+		});
+
+</script>
+<!--<div class="calltoaction">LOOKING FOR SOMETHING IN PARTICULAR? <a href="#" data-toggle="modal" data-target="#matchEnquiry" class="ss-notifications"> Sign up for property updates</a></div>-->
+<div class="modal" id="matchEnquiry" tabindex="-1" role="dialog" aria-labelledby="matchEnquiry" aria-hidden="true" style="display:none">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Set up a property alert</h4>
+      </div>
+      <div class="modal-body">
+        <form id="matchRequest" class="form-horizontal bdf-requestMatchForm">
+          <div class="bdf-errorMsg bdd-hide alert alert-danger" role="alert"> The fields marked require information: </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control input-lg" name="firstName" placeholder="Enter name*" type="text">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input class="form-control input-lg" name="email" placeholder="Enter email*" type="email">
+          </div>
+          <div class="form-group">
+            <label for="tel">Tel.</label>
+            <input class="form-control input-lg" name="tel1" placeholder="Enter phone number*" type="text">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control input-lg" name="message" placeholder="Type a message" rows="7"></textarea>
+          </div>
+          <!--          <div class="form-group">
+            <label for="propertyTypes">Property Type</label>
+            <select name="propertyTypes">
+
+			{pTypeOptions}
+
+            </select>
+          </div>-->
+          <div class="form-group">
+            <label for="minPrice">Minimum Monthly Rental Price</label>
+            <select name="minPrice">
+
+
+			{minPriceOptionsLet}
+
+
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="maxPrice">Maximum Monthly Rental Price</label>
+            <select name="maxPrice">
+
+
+			{maxPriceOptionsLet}
+
+
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bedRoomsMin">Minumum no. of bedrooms</label>
+            <select name="bedRoomsMin">
+
+
+			{minBedOptions}
+
+
+            </select>
+          </div>
+          <!--          <div class="form-group">
+            <label for="bedRoomsMax">Maximum no. of bedrooms</label>
+            <select name="bedRoomsMax">
+
+			{maxBedOptions}
+
+            </select>
+          </div>-->
+          <div class="form-group">
+            <label for="districtareas">Choose an area</label>
+            <select name="districtareas" id="districtareas">
+              <option value="">Select</option>
+              <option value="edcc">Edinburgh City Centre</option>
+              <option value="ede">Edinburgh East</option>
+              <option value="edn">Edinburgh North</option>
+              <option value="ednw">Edinburgh North West</option>
+              <option value="es">Edinburgh South</option>
+              <option value="esw">Edinburgh South West</option>
+              <option value="ew">Edinburgh West</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="districtareas">Choose a district</label>
+            <select name="districts" id="districtoptions">
+
+
+
+			{districtOptions}
+
+
+            </select>
+          </div>
+          <!--          <div class="form-group">
+            <label for="keywords">Keywords</label>
+            <input class="form-control input-lg" name="keywords" placeholder="Enter keywords" type="text">
+          </div>-->
+
+          <!--  -->
+          <div class="form-group">
+            <input class="form-control input-lg" name="transType" value="let" type="hidden">
+            <button type="submit" class="btn btn-default bdf-Submit">Send message</button>
+            <button type="button" class="btn btn-default bdf-cancel" data-dismiss="modal">Cancel</button>
+          </div>
+          <div class="commentsdcoy">
+            <label class="col-sm-3 control-label" for="comments">Leave next field empty</label>
+            <input type="text" name="comments">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+edcc = {
+	"All Areas":"Edinburgh City Centre",
+"Belford":"Belford, Edinburgh City Centre",
+"Bellevue":"Bellevue, Edinburgh City Centre",
+"Broughton":"Broughton, Edinburgh City Centre",
+"Calton":"Calton, Edinburgh City Centre",
+"Canongate":"Canongate, Edinburgh City Centre",
+"Canonmills":"Canonmills, Edinburgh City Centre",
+"Comely Bank":"Comely Bank, Edinburgh City Centre",
+"Dean":"Dean, Edinburgh City Centre",
+"Fountainbridge":"Fountainbridge, Edinburgh City Centre",
+"Grassmarket":"Grassmarket, Edinburgh City Centre",
+"Haymarket":"Haymarket, Edinburgh City Centre",
+"Lauriston":"Lauriston, Edinburgh City Centre",
+"New Town":"New Town, Edinburgh City Centre",
+"Old Town":"Old Town, Edinburgh City Centre",
+"Pleasance":"Pleasance, Edinburgh City Centre",
+"South Side":"South Side, Edinburgh City Centre",
+"St Leonards":"St Leonards, Edinburgh City Centre",
+"Stockbridge":"Stockbridge, Edinburgh City Centre",
+"Tollcross":"Tollcross, Edinburgh City Centre",
+"West End":"West End, Edinburgh City Centre"
+};
+
+
+
+eds = {
+	"All Areas":"Edinburgh South",
+"Alnwickhill":"Alnwickhill, Edinburgh South",
+"Blacket":"Blacket, Edinburgh South",
+"Blackford":"Blackford, Edinburgh South",
+"Braids":"Braids, Edinburgh South",
+"Bruntsfield":"Bruntsfield, Edinburgh South",
+"Buckstone":"Buckstone, Edinburgh South",
+"Burdiehouse":"Burdiehouse, Edinburgh South",
+"Colinton":"Colinton, Edinburgh South",
+"Colinton Mains":"Colinton Mains, Edinburgh South",
+"Comiston":"Comiston, Edinburgh South",
+"Craiglockhart":"Craiglockhart, Edinburgh South",
+"Fairmilehead":"Fairmilehead, Edinburgh South",
+"Ferniehill":"Ferniehill, Edinburgh South",
+"Gilmerton":"Gilmerton, Edinburgh South",
+"Glenlockhart":"Glenlockhart, Edinburgh South",
+"Gracemount":"Gracemount, Edinburgh South",
+"Grange":"Grange, Edinburgh South",
+"Greenbank":"Greenbank, Edinburgh South",
+"Greenhill":"Greenhill, Edinburgh South",
+"Howdenhall":"Howdenhall, Edinburgh South",
+"Kingsknowe":"Kingsknowe, Edinburgh South",
+"Liberton":"Liberton, Edinburgh South",
+"Little France":"Little France, Edinburgh South",
+"Marchmont":"Marchmont, Edinburgh South",
+"Mayfield":"Mayfield, Edinburgh South",
+"Merchiston":"Merchiston, Edinburgh South",
+"Moredun":"Moredun, Edinburgh South",
+"Morningside":"Morningside, Edinburgh South",
+"Mortonhall":"Mortonhall, Edinburgh South",
+"Newington":"Newington, Edinburgh South",
+"Oxgangs":"Oxgangs, Edinburgh South",
+"Peffermill":"Peffermill, Edinburgh South",
+"Polwarth":"Polwarth, Edinburgh South",
+"Prestonfield":"Prestonfield, Edinburgh South",
+"Priestfield":"Priestfield, Edinburgh South",
+"Sciennes":"Sciennes, Edinburgh South",
+"Shandon":"Shandon, Edinburgh South",
+"Southhouse":"Southhouse, Edinburgh South",
+"Swanston":"Swanston, Edinburgh South",
+"The Inch":"The Inch, Edinburgh South",
+"The Meadows":"The Meadows, Edinburgh South",
+"Viewforth":"Viewforth, Edinburgh South"
+};
+
+edsw = {
+	"All Areas":"Edinburgh South West",
+"Baberton":"Baberton, Edinburgh South West",
+"Balerno":"Balerno, Edinburgh South West",
+"Currie":"Currie, Edinburgh South West",
+"Dalmahoy":"Dalmahoy, Edinburgh South West",
+"Juniper Green":"Juniper Green, Edinburgh South West"
+};
+edn = {
+	"All Areas":"Edinburgh North",
+"Barnton":"Barnton, Edinburgh North",
+"Blackhall":"Blackhall, Edinburgh North",
+"Boswall":"Boswall, Edinburgh North",
+"Cammo":"Cammo, Edinburgh North",
+"Clermiston":"Clermiston, Edinburgh North",
+"Corstorphine":"Corstorphine, Edinburgh North",
+"Craigleith":"Craigleith, Edinburgh North",
+"Cramond":"Cramond, Edinburgh North",
+"Crewe":"Crewe, Edinburgh North",
+"Davidsons Mains":"Davidsons Mains, Edinburgh North",
+"Drum brae":"Drum brae, Edinburgh North",
+"Drylaw":"Drylaw, Edinburgh North",
+"East Craigs":"East Craigs, Edinburgh North",
+"Easter Drylaw":"Easter Drylaw, Edinburgh North",
+"Fettes":"Fettes, Edinburgh North",
+"Granton":"Granton, Edinburgh North",
+"Inverleith":"Inverleith, Edinburgh North",
+"Maybury":"Maybury, Edinburgh North",
+"Muirhouse":"Muirhouse, Edinburgh North",
+"Murrayfield":"Murrayfield, Edinburgh North",
+"Orchard Brae":"Orchard Brae, Edinburgh North",
+"Pilton":"Pilton, Edinburgh North",
+"Ravelston":"Ravelston, Edinburgh North",
+"Silverknowes":"Silverknowes, Edinburgh North",
+"South Gyle":"South Gyle, Edinburgh North",
+"Trinity":"Trinity, Edinburgh North",
+"Warriston":"Warriston, Edinburgh North",
+"West Pilton":"West Pilton, Edinburgh North",
+"Wester Coates":"Wester Coates, Edinburgh North"
+};
+
+ednw = {
+	"All Areas":"Edinburgh North West",
+"Dalmeny":"Dalmeny, Edinburgh North West",
+"Gogar":"Gogar, Edinburgh North West",
+"Hermiston":"Hermiston, Edinburgh North West",
+"Ingliston":"Ingliston, Edinburgh North West",
+"Kirkliston":"Kirkliston, Edinburgh North West",
+"Newbridge":"Newbridge, Edinburgh North West",
+"Ratho":"Ratho, Edinburgh North West",
+"Ratho Station":"Ratho Station, Edinburgh North West",
+"South Queensferry":"South Queensferry, Edinburgh North West"
+};
+ede = {
+	"All Areas":"Edinburgh East",
+"Abbeyhill":"Abbeyhill, Edinburgh East",
+"Bingham":"Bingham, Edinburgh East",
+"Bonnington":"Bonnington, Edinburgh East",
+"Brunstane":"Brunstane, Edinburgh East",
+"Brunswick":"Brunswick, Edinburgh East",
+"Craigentinny":"Craigentinny, Edinburgh East",
+"Craigmillar":"Craigmillar, Edinburgh East",
+"Duddingston":"Duddingston, Edinburgh East",
+"Duddingston Village":"Duddingston Village, Edinburgh East",
+"Easter Road":"Easter Road, Edinburgh East",
+"Hillside":"Hillside, Edinburgh East",
+"Holyrood":"Holyrood, Edinburgh East",
+"Joppa":"Joppa, Edinburgh East",
+"Leith":"Leith, Edinburgh East",
+"Leith Links":"Leith Links, Edinburgh East",
+"Leith Walk":"Leith Walk, Edinburgh East",
+"Lochend":"Lochend, Edinburgh East",
+"Marionville":"Marionville, Edinburgh East",
+"Meadowbank":"Meadowbank, Edinburgh East",
+"Mountcastle":"Mountcastle, Edinburgh East",
+"Newcraighall":"Newcraighall, Edinburgh East",
+"Newhaven":"Newhaven, Edinburgh East",
+"Niddrie":"Niddrie, Edinburgh East",
+"Northfield":"Northfield, Edinburgh East",
+"Piersfield":"Piersfield, Edinburgh East",
+"Piershill":"Piershill, Edinburgh East",
+"Pilrig":"Pilrig, Edinburgh East",
+"Portobello":"Portobello, Edinburgh East",
+"Restalrig":"Restalrig, Edinburgh East",
+"The Jewel":"The Jewel, Edinburgh East",
+"The Shore":"The Shore, Edinburgh East",
+"The Wisp":"The Wisp, Edinburgh East",
+"Willowbrae":"Willowbrae, Edinburgh East"
+};
+
+edw = {
+	"All Areas":"Edinburgh West",
+"Ardmillan":"Ardmillan, Edinburgh West",
+"Balgreen":"Balgreen, Edinburgh West",
+"Broomhouse":"Broomhouse, Edinburgh West",
+"Carrick Knowe":"Carrick Knowe, Edinburgh West",
+"Chesser":"Chesser, Edinburgh West",
+"Dalry":"Dalry, Edinburgh West",
+"Gorgie":"Gorgie, Edinburgh West",
+"Longstone":"Longstone, Edinburgh West",
+"Murrayburn":"Murrayburn, Edinburgh West",
+"Parkhead":"Parkhead, Edinburgh West",
+"Redhall":"Redhall, Edinburgh West",
+"Roseburn":"Roseburn, Edinburgh West",
+"Saughton":"Saughton, Edinburgh West",
+"Saughtonhall":"Saughtonhall, Edinburgh West",
+"Sighthill":"Sighthill, Edinburgh West",
+"Slateford":"Slateford, Edinburgh West",
+"Stenhouse":"Stenhouse, Edinburgh West",
+"Westburn":"Westburn, Edinburgh West",
+"Wester Hailes":"Wester Hailes, Edinburgh West"
+};
+
+$el = jQuery("#districtoptions");
+
+
+jQuery( "#districtareas" ).change(function() {
+
+areaselected = jQuery( "#districtareas" ).val();
+
+
+switch(areaselected) {
+    case "edcc":
+        newOptions = edcc;
+
+        break;
+    case "eds":
+        newOptions = eds;
+        break;
+	case "edsw":
+        newOptions = edsw;
+        break;
+	case "edn":
+        newOptions = edn;
+        break;
+    case "ednw":
+        newOptions = ednw;
+        break;
+
+	case "ede":
+        newOptions = ede;
+        break;
+	case "edw":
+        newOptions = edw;
+        break;
+    default:
+        newOptions = edcc;
+}
+
+
+
+  jQuery("#districtoptions").empty(); // remove old options
+
+
+
+jQuery.each(newOptions, function(value,key) {
+
+  jQuery("#districtoptions").append(jQuery("<option></option>").attr("value", key).text(value));
+});
+});
+
+
+
+
+</script>

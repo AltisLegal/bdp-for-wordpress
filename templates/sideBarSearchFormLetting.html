@@ -1,0 +1,51 @@
+<div class="sformcontainer bdpform">
+  <form role="form" method="post" action="{formActionPathLettings}" class="bdf-searchForm bdpsearchform" id="searchform">
+  <div class="keyword sform__field" style="">
+        <label for="keysearch" class="labelsmall">Location</label>
+        <input type="text" class="search-location" name="keysearch" value="{keysearch_Value}" data-default="Location" placeholder="e.g. street name, postcode or area"/>
+</div>
+<div class="proptype sform__field"> <label for="property_type">Property Type</label>
+  <select name="property_type">{pTypeOptions}</select>
+</div>
+<div class="price sform__field">
+  <div class="col1">
+      <label for="pricefrom">Min price</label>
+    <select name="pricefrom" class="form-control">{minPriceOptionsLet}</select>
+  </div>
+  <div class="col2">
+      <label  for="priceto">Max price</label>
+    <select name="priceto" class="form-control">{maxPriceOptionsLet}</select>
+  </div>
+</div>
+<div class="bedrooms sform__field"> <label for="bedRoomsMin">Bedrooms</label>
+  <select name="bedRoomsMin" id="bedRoomsMin">{minBedOptions}</select>
+</div>
+<div class="radius sform__field">
+  <label for="lrad" class="labelsmall">Search Radius</label>
+  <select name="lrad" id="lrad"  class="form-control">{radOptions}</select>
+  <input id="lru" name="lru" type="hidden" value="miles">
+  <input id="tt" name="tt" type="hidden" value="1">
+</div>
+<div class="searchbuttons sform__field">
+  <button class="property-search-submit bdf-Submit"><span>Search</span></button>
+</div>
+<div class=" sform__field">
+  <label for="nv">
+  <input type="checkbox" {nv_Value} name="nv" id="nv" value="on">
+  Exclude Under Offer and Sold Properties</label>
+  <div class="cleared"></div>
+</div>
+
+  
+
+
+
+    <!--   <input type="hidden" name="pricefrom" value="{minprice_Value}">
+    <input type="hidden" name="priceto" value="{maxprice_Value}">-->
+  </form>
+
+  <div class="cleared"></div>
+</div>
+<script type="text/javascript">
+
+</script>

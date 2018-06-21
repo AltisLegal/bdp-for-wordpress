@@ -1,0 +1,37 @@
+<div class="x-column x-sm vc x-1-1" style="">
+  <ul class="x-block-grid one-up recentlySold">
+    {resOutput}
+  </ul>
+</div>
+<div class="x-column x-sm vc x-1-1" style=""> <a href="#" class="showmore x-btn" style="display:block; margin:30px 0 60px 0">SHOW MORE</a> </div>
+<script>
+
+
+numresults = jQuery('.recentlySold li').length;
+
+console.log(numresults);
+
+for(i = 3; i<numresults; i++ ){
+	jQuery('.recentlySold li:eq('+i+')').hide();
+}
+currentindex = 3;
+
+jQuery('.showmore').click(function(e){
+	e.preventDefault();
+	if(currentindex !== numresults){
+	newindex = currentindex+1;
+	for(i = currentindex; i<newindex; i++ ){
+	jQuery('.recentlySold li:eq('+i+')').slideDown();
+}
+	
+	currentindex = newindex;
+	if(currentindex == numresults){
+		jQuery('.showmore').fadeOut();
+	}
+	}else{
+	jQuery('.showmore').fadeOut();	
+	}
+
+});
+
+</script>

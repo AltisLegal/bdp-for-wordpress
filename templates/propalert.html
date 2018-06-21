@@ -1,0 +1,306 @@
+
+<div class="x-container max width wpb_row">
+  <div class="x-column x-sm vc x-1-1 bdpsearchform" style=""> <a class="close ss-delete"></a>
+    <h2>Set up a property Alert</h2>
+    <p>Complete the form below by registering your contact details and the requirements for your next property. We will email you with the details of any properties that match and you can change your search criteria or unsubscribe at any time.</p>
+    <div class="" id="matchEnquiry" tabindex="-1" role="dialog" aria-labelledby="matchEnquiry" aria-hidden="true">
+      <form id="matchRequest" class="form-horizontal bdf-requestMatchForm bdpsearchform">
+        <div class="bdf-errorMsg bdd-hide alert alert-danger" role="alert"> The fields marked require information: </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="firstName" class="labelsmall">First Name</label>
+              <input class="form-control input-lg" name="firstName" placeholder="Enter first name " type="text">
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="name" class="labelsmall">Last Name</label>
+              <input class="form-control input-lg" name="lastName" placeholder="Enter last name " type="text">
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="email" class="labelsmall">Email address</label>
+              <input class="form-control input-lg" name="email" placeholder="Enter email " type="email">
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="tel" class="labelsmall">Tel.</label>
+              <input class="form-control input-lg" name="tel1" placeholder="Enter phone number " type="text">
+            </div>
+          </div>
+        </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-1">
+            <div class="form-group">
+              <label for="message" class="labelsmall">Please provide any extra information</label>
+              <textarea class="form-control input-lg" name="message" placeholder="Type a message" rows="7"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="propertyTypes" class="labelsmall">Property Type</label>
+              <select name="propertyTypes">
+                
+                                  
+			{pTypeOptions}
+			
+                                
+              </select>
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="minPrice" class="labelsmall">Minimum Price</label>
+              <select name="minPrice">
+                
+                                  
+			{minPriceOptionsSale}
+			
+                                
+              </select>
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="maxPrice" class="labelsmall">Maximum Price</label>
+              <select name="maxPrice">
+                
+                                  
+			{maxPriceOptionsSale}
+			
+                                
+              </select>
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="bedRoomsMin" class="labelsmall">Minumum no. of bedrooms</label>
+              <select name="bedRoomsMin">
+                
+                                  
+			{minBedOptions}
+			
+                                
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="x-container wpb_row"> 
+          <!--<div class="x-column x-sm x-1-2">
+                              <div class="form-group">
+                               <label for="districtareas" class="labelsmall">Choose an area</label>
+                                <select name="districtareas" id="districtareas">
+                                  <option value="">Select an area</option>
+                                  <option value="edcc">Edinburgh City Centre</option>
+                                  <option value="ede">Edinburgh East</option>
+                                  <option value="edn">Edinburgh North</option>
+                                  <option value="ednw">Edinburgh North West</option>
+                                  <option value="es">Edinburgh South</option>
+                                  <option value="esw">Edinburgh South West</option>
+                                  <option value="ew">Edinburgh West</option>
+                                </select>
+                              </div></div>-->
+          <div class="x-column x-sm x-1-1">
+            <div class="form-group" style="position:relative">
+              <label for="districtareas" class="labelsmall">Choose locations</label>
+              <input name="districtoptions" id="districtoptions" placeholder="Type a location " type="text">
+              <p>Start typing in the box and choose from the options</p>
+            </div>
+          </div>
+        </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <input class="form-control input-lg" name="transType" value="sale" type="hidden">
+              <button type="submit" class="btn btn-default bdf-Submit">Register Now</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+					
+					jQuery( document ).ready(function() {
+						
+ 			jQuery("#districtoptions").tokenInput([
+                {id: '"Edinburgh City Centre"', name: "Edinburgh City Centre"},	
+{id: '"Belford, Edinburgh City Centre"', name: "Belford, Edinburgh City Centre"},	
+{id: '"Bellevue, Edinburgh City Centre"', name: "Bellevue, Edinburgh City Centre"},	
+{id: '"Broughton, Edinburgh City Centre"', name: "Broughton, Edinburgh City Centre"},	
+{id: '"Calton, Edinburgh City Centre"', name: "Calton, Edinburgh City Centre"},	
+{id: '"Canongate, Edinburgh City Centre"', name: "Canongate, Edinburgh City Centre"},	
+{id: '"Canonmills, Edinburgh City Centre"', name: "Canonmills, Edinburgh City Centre"},	
+{id: '"Comely Bank, Edinburgh City Centre"', name: "Comely Bank, Edinburgh City Centre"},	
+{id: '"Dean, Edinburgh City Centre"', name: "Dean, Edinburgh City Centre"},	
+{id: '"Fountainbridge, Edinburgh City Centre"', name: "Fountainbridge, Edinburgh City Centre"},	
+{id: '"Grassmarket, Edinburgh City Centre"', name: "Grassmarket, Edinburgh City Centre"},	
+{id: '"Haymarket, Edinburgh City Centre"', name: "Haymarket, Edinburgh City Centre"},	
+{id: '"Lauriston, Edinburgh City Centre"', name: "Lauriston, Edinburgh City Centre"},	
+{id: '"New Town, Edinburgh City Centre"', name: "New Town, Edinburgh City Centre"},	
+{id: '"Old Town, Edinburgh City Centre"', name: "Old Town, Edinburgh City Centre"},	
+{id: '"Pleasance, Edinburgh City Centre"', name: "Pleasance, Edinburgh City Centre"},	
+{id: '"South Side, Edinburgh City Centre"', name: "South Side, Edinburgh City Centre"},	
+{id: '"St Leonards, Edinburgh City Centre"', name: "St Leonards, Edinburgh City Centre"},	
+{id: '"Stockbridge, Edinburgh City Centre"', name: "Stockbridge, Edinburgh City Centre"},	
+{id: '"Tollcross, Edinburgh City Centre"', name: "Tollcross, Edinburgh City Centre"},	
+{id: '"West End, Edinburgh City Centre"', name: "West End, Edinburgh City Centre"},
+{id: '"Edinburgh South"', name: "Edinburgh South"},	
+{id: '"Alnwickhill, Edinburgh South"', name: "Alnwickhill, Edinburgh South"},	
+{id: '"Blacket, Edinburgh South"', name: "Blacket, Edinburgh South"},	
+{id: '"Blackford, Edinburgh South"', name: "Blackford, Edinburgh South"},	
+{id: '"Braids, Edinburgh South"', name: "Braids, Edinburgh South"},	
+{id: '"Bruntsfield, Edinburgh South"', name: "Bruntsfield, Edinburgh South"},	
+{id: '"Buckstone, Edinburgh South"', name: "Buckstone, Edinburgh South"},	
+{id: '"Burdiehouse, Edinburgh South"', name: "Burdiehouse, Edinburgh South"},	
+{id: '"Colinton, Edinburgh South"', name: "Colinton, Edinburgh South"},	
+{id: '"Colinton Mains, Edinburgh South"', name: "Colinton Mains, Edinburgh South"},	
+{id: '"Comiston, Edinburgh South"', name: "Comiston, Edinburgh South"},	
+{id: '"Craiglockhart, Edinburgh South"', name: "Craiglockhart, Edinburgh South"},	
+{id: '"Fairmilehead, Edinburgh South"', name: "Fairmilehead, Edinburgh South"},	
+{id: '"Ferniehill, Edinburgh South"', name: "Ferniehill, Edinburgh South"},	
+{id: '"Gilmerton, Edinburgh South"', name: "Gilmerton, Edinburgh South"},	
+{id: '"Glenlockhart, Edinburgh South"', name: "Glenlockhart, Edinburgh South"},	
+{id: '"Gracemount, Edinburgh South"', name: "Gracemount, Edinburgh South"},	
+{id: '"Grange, Edinburgh South"', name: "Grange, Edinburgh South"},	
+{id: '"Greenbank, Edinburgh South"', name: "Greenbank, Edinburgh South"},	
+{id: '"Greenhill, Edinburgh South"', name: "Greenhill, Edinburgh South"},	
+{id: '"Howdenhall, Edinburgh South"', name: "Howdenhall, Edinburgh South"},	
+{id: '"Kingsknowe, Edinburgh South"', name: "Kingsknowe, Edinburgh South"},	
+{id: '"Liberton, Edinburgh South"', name: "Liberton, Edinburgh South"},	
+{id: '"Little France, Edinburgh South"', name: "Little France, Edinburgh South"},	
+{id: '"Marchmont, Edinburgh South"', name: "Marchmont, Edinburgh South"},	
+{id: '"Mayfield, Edinburgh South"', name: "Mayfield, Edinburgh South"},	
+{id: '"Merchiston, Edinburgh South"', name: "Merchiston, Edinburgh South"},	
+{id: '"Moredun, Edinburgh South"', name: "Moredun, Edinburgh South"},	
+{id: '"Morningside, Edinburgh South"', name: "Morningside, Edinburgh South"},	
+{id: '"Mortonhall, Edinburgh South"', name: "Mortonhall, Edinburgh South"},
+{id: '"Newington, Edinburgh South"', name: "Newington, Edinburgh South"},	
+{id: '"Oxgangs, Edinburgh South"', name: "Oxgangs, Edinburgh South"},	
+{id: '"Peffermill, Edinburgh South"', name: "Peffermill, Edinburgh South"},	
+{id: '"Polwarth, Edinburgh South"', name: "Polwarth, Edinburgh South"},	
+{id: '"Prestonfield, Edinburgh South"', name: "Prestonfield, Edinburgh South"},	
+{id: '"Priestfield, Edinburgh South"', name: "Priestfield, Edinburgh South"},	
+{id: '"Sciennes, Edinburgh South"', name: "Sciennes, Edinburgh South"},		
+{id: '"Shandon, Edinburgh South"', name: "Shandon, Edinburgh South"},		
+{id: '"Southhouse, Edinburgh South"', name: "Southhouse, Edinburgh South"},		
+{id: '"Swanston, Edinburgh South"', name: "Swanston, Edinburgh South"},		
+{id: '"The Inch, Edinburgh South"', name: "The Inch, Edinburgh South"},		
+{id: '"The Meadows, Edinburgh South"', name: "The Meadows, Edinburgh South"},		
+{id: '"Viewforth, Edinburgh South"', name: "Viewforth, Edinburgh South"},
+{id: '"Edinburgh South West"', name: "Edinburgh South West"},		
+{id: '"Baberton, Edinburgh South West"', name: "Baberton, Edinburgh South West"},		
+{id: '"Balerno, Edinburgh South West"', name: "Balerno, Edinburgh South West"},		
+{id: '"Currie, Edinburgh South West"', name: "Currie, Edinburgh South West"},		
+{id: '"Dalmahoy, Edinburgh South West"', name: "Dalmahoy, Edinburgh South West"},		
+{id: '"Juniper Green, Edinburgh South West"', name: "Juniper Green, Edinburgh South West"},
+{id: '"Edinburgh North"', name: "Edinburgh North"},		
+{id: '"Barnton, Edinburgh North"', name: "Barnton, Edinburgh North"},		
+{id: '"Blackhall, Edinburgh North"', name: "Blackhall, Edinburgh North"},		
+{id: '"Boswall, Edinburgh North"', name: "Boswall, Edinburgh North"},		
+{id: '"Cammo, Edinburgh North"', name: "Cammo, Edinburgh North"},		
+{id: '"Clermiston, Edinburgh North"', name: "Clermiston, Edinburgh North"},		
+{id: '"Corstorphine, Edinburgh North"', name: "Corstorphine, Edinburgh North"},		
+{id: '"Craigleith, Edinburgh North"', name: "Craigleith, Edinburgh North"},		
+{id: '"Cramond, Edinburgh North"', name: "Cramond, Edinburgh North"},		
+{id: '"Crewe, Edinburgh North"', name: "Crewe, Edinburgh North"},		
+{id: '"Davidsons Mains, Edinburgh North"', name: "Davidsons Mains, Edinburgh North"},		
+{id: '"Drum brae, Edinburgh North"', name: "Drum brae, Edinburgh North"},		
+{id: '"Drylaw, Edinburgh North"', name: "Drylaw, Edinburgh North"},		
+{id: '"East Craigs, Edinburgh North"', name: "East Craigs, Edinburgh North"},		
+{id: '"Easter Drylaw, Edinburgh North"', name: "Easter Drylaw, Edinburgh North"},		
+{id: '"Fettes, Edinburgh North"', name: "Fettes, Edinburgh North"},		
+{id: '"Granton, Edinburgh North"', name: "Granton, Edinburgh North"},		
+{id: '"Inverleith, Edinburgh North"', name: "Inverleith, Edinburgh North"},		
+{id: '"Maybury, Edinburgh North"', name: "Maybury, Edinburgh North"},		
+{id: '"Muirhouse, Edinburgh North"', name: "Muirhouse, Edinburgh North"},		
+{id: '"Murrayfield, Edinburgh North"', name: "Murrayfield, Edinburgh North"},		
+{id: '"Orchard Brae, Edinburgh North"', name: "Orchard Brae, Edinburgh North"},		
+{id: '"Pilton, Edinburgh North"', name: "Pilton, Edinburgh North"},		
+{id: '"Ravelston, Edinburgh North"', name: "Ravelston, Edinburgh North"},		
+{id: '"Silverknowes, Edinburgh North"', name: "Silverknowes, Edinburgh North"},	
+{id: '"South Gyle, Edinburgh North"', name: "South Gyle, Edinburgh North"},	
+{id: '"Trinity, Edinburgh North"', name: "Trinity, Edinburgh North"},	
+{id: '"West Pilton, Edinburgh North"', name: "West Pilton, Edinburgh North"},	
+{id: '"Warriston, Edinburgh North"', name: "Warriston, Edinburgh North"},		
+{id: '"Wester Coates, Edinburgh North"', name: "Wester Coates, Edinburgh North"},
+{id: '"North West"', name: "North West"},		
+{id: '"Dalmeny, North West"', name: "Dalmeny, North West"},		
+{id: '"Gogar, North West"', name: "Gogar, North West"},		
+{id: '"Hermiston, North West"', name: "Hermiston, North West"},		
+{id: '"Ingliston, North West"', name: "Ingliston, North West"},		
+{id: '"Kirkliston, North West"', name: "Kirkliston, North West"},		
+{id: '"Newbridge, North West"', name: "Newbridge, North West"},		
+{id: '"Ratho, North West"', name: "Ratho, North West"},		
+{id: '"Ratho Station, North West"', name: "Ratho Station, North West"},		
+{id: '"South Queensferry, North West"', name: "South Queensferry, North West"},
+{id: '"Edinburgh East"', name: "Edinburgh East"},		
+{id: '"Abbeyhill, Edinburgh East"', name: "Abbeyhill, Edinburgh East"},	
+{id: '"Bingham, Edinburgh East"', name: "Bingham, Edinburgh East"},	
+{id: '"Bonnington, Edinburgh East"', name: "Bonnington, Edinburgh East"},	
+{id: '"Brunstane, Edinburgh East"', name: "Brunstane, Edinburgh East"},	
+{id: '"Brunswick, Edinburgh East"', name: "Brunswick, Edinburgh East"},	
+{id: '"Craigentinny, Edinburgh East"', name: "Craigentinny, Edinburgh East"},	
+{id: '"Craigmillar, Edinburgh East"', name: "Craigmillar, Edinburgh East"},	
+{id: '"Duddingston, Edinburgh East"', name: "Duddingston, Edinburgh East"},	
+{id: '"Duddingston Village, Edinburgh East"', name: "Duddingston Village, Edinburgh East"},	
+{id: '"Easter Road, Edinburgh East"', name: "Easter Road, Edinburgh East"},	
+{id: '"Hillside, Edinburgh East"', name: "Hillside, Edinburgh East"},	
+{id: '"Holyrood, Edinburgh East"', name: "Holyrood, Edinburgh East"},	
+{id: '"Joppa, Edinburgh East"', name: "Joppa, Edinburgh East"},	
+{id: '"Leith, Edinburgh East"', name: "Leith, Edinburgh East"},	
+{id: '"Leith Links, Edinburgh East"', name: "Leith Links, Edinburgh East"},	
+{id: '"Leith Walk, Edinburgh East"', name: "Leith Walk, Edinburgh East"},	
+{id: '"Lochend, Edinburgh East"', name: "Lochend, Edinburgh East"},	
+{id: '"Marionville, Edinburgh East"', name: "Marionville, Edinburgh East"},	
+{id: '"Meadowbank, Edinburgh East"', name: "Meadowbank, Edinburgh East"},	
+{id: '"Mountcastle, Edinburgh East"', name: "Mountcastle, Edinburgh East"},	
+{id: '"Newcraighall, Edinburgh East"', name: "Newcraighall, Edinburgh East"},	
+{id: '"Newhaven, Edinburgh East"', name: "Newhaven, Edinburgh East"},	
+{id: '"Niddrie, Edinburgh East"', name: "Niddrie, Edinburgh East"},	
+{id: '"Northfield, Edinburgh East"', name: "Northfield, Edinburgh East"},	
+{id: '"Piersfield, Edinburgh East"', name: "Piersfield, Edinburgh East"},	
+{id: '"Piershill, Edinburgh East"', name: "Piershill, Edinburgh East"},	
+{id: '"Pilrig, Edinburgh East"', name: "Pilrig, Edinburgh East"},		
+{id: '"Portobello, Edinburgh East"', name: "Portobello, Edinburgh East"},		
+{id: '"Restalrig, Edinburgh East"', name: "Restalrig, Edinburgh East"},		
+{id: '"The Jewel, Edinburgh East"', name: "The Jewel, Edinburgh East"},		
+{id: '"The Shore, Edinburgh East"', name: "The Shore, Edinburgh East"},		
+{id: '"The Wisp, Edinburgh East"', name: "The Wisp, Edinburgh East"},	
+{id: '"Willowbrae, Edinburgh East"', name: "Willowbrae, Edinburgh East"},	
+{id: '"Edinburgh West"', name: "Edinburgh West"},	
+{id: '"Ardmillan, Edinburgh West"', name: "Ardmillan, Edinburgh West"},	
+{id: '"Balgreen, Edinburgh West"', name: "Balgreen, Edinburgh West"},	
+{id: '"Broomhouse, Edinburgh West"', name: "Broomhouse, Edinburgh West"},	
+{id: '"Carrick Knowe, Edinburgh West"', name: "Carrick Knowe, Edinburgh West"},	
+{id: '"Chesser, Edinburgh West"', name: "Chesser, Edinburgh West"},	
+{id: '"Dalry, Edinburgh West"', name: "Dalry, Edinburgh West"},	
+{id: '"Gorgie, Edinburgh West"', name: "Gorgie, Edinburgh West"},	
+{id: '"Longstone, Edinburgh West"', name: "Longstone, Edinburgh West"},	
+{id: '"Murrayburn, Edinburgh West"', name: "Murrayburn, Edinburgh West"},	
+{id: '"Parkhead, Edinburgh West"', name: "Parkhead, Edinburgh West"},	
+{id: '"Redhall, Edinburgh West"', name: "Redhall, Edinburgh West"},	
+{id: '"Roseburn, Edinburgh West"', name: "Roseburn, Edinburgh West"},	
+{id: '"Saughton, Edinburgh West"', name: "Saughton, Edinburgh West"},	
+{id: '"Saughtonhall, Edinburgh West"', name: "Saughtonhall, Edinburgh West"},	
+{id: '"Sighthill, Edinburgh West"', name: "Sighthill, Edinburgh West"},	
+{id: '"Slateford, Edinburgh West"', name: "Slateford, Edinburgh West"},	
+{id: '"Stenhouse, Edinburgh West"', name: "Stenhouse, Edinburgh West"},	
+{id: '"Westburn, Edinburgh West"', name: "Westburn, Edinburgh West"},	
+{id: '"Wester Hailes, Edinburgh West"', name: "Wester Hailes, Edinburgh West"},		
+				
+            ],{  theme: "facebook", preventDuplicates: true });
+
+
+					
+					
+				
+});
+
+</script> 
+  </div>
+</div>

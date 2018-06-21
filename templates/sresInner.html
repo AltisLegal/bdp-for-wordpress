@@ -1,0 +1,19 @@
+<li class="proplisting">
+  <div class="property-listings__inner">
+    <div class="thumbnail">
+      <a href="{detailPath}" title="View Property Details">
+        <img src="{imagePath}&w=640&h=364" alt="{houseNo} {streetName}, {town}" >
+      </a>
+    </div>
+    <!--<div style="position:absolute; top:0; display:block; position:absolute; right:0; padding:5px; color:#FFF; background:#F00; opacity: 0.7;" class="closingtag bump{closingDate}">CLOSING DATE</div>-->
+    <div class="details">
+      <div class="availability">
+        <div class="flag branch{branch_id}"><span>{sellingStatus}</span></div>
+        <div class="price">{priceType} {outputAskingPrice}</div>
+      </div>
+      <h4>{houseNo} {streetName},<br/> {town}, {postcode} </h4>
+      <div class="type"><span class="description"><span>{bedRooms} Bedroom </span>{pType} </span></div>
+      <a class="button" href="{detailPath}" title="View Property Details">View details</a>
+    </div>
+  </div>
+</li>

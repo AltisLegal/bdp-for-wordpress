@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<baseName>{{ baseName }}</baseName>
+	<basePath><![CDATA[ {{ basePath }} ]]></basePath>
+	<formSuccess>{{ Forms.formValid }}</formSuccess>
+	<debug><![CDATA[{{ debugString }}]]></debug>
+	<ajaxRefreshCBack>{{ ajaxRefreshCBack }}</ajaxRefreshCBack>
+	{{ xmlNodes }}
+	{{ extraNodes }}
+	<htmlOutput> {{ htmlOutput }}</htmlOutput>
+</root>

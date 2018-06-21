@@ -1,0 +1,78 @@
+<div class="x-container wpb_row propertylisting" style="z-index: 100; " data-numresults="{resTotal}">
+  <div class="soptions wpb_row">
+    <div class="soptions__left">
+      <h4>{resTotal} Properties</h4>
+    </div>
+    <div class="soptions__right">
+      <select class="form-control" name="nnres" id="nres">
+    {nresultsFields}
+          </select>
+      <select class="form-control" name="order_res" id="order_res">
+    {orderingFields}
+      </select>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class=" wpb_row">
+    <ul class="properties--results">
+      {resOutput}
+    </ul>
+  </div>
+<div class="wpb_row">
+    <div class="pagination property"> {pagingOutput} </div>
+</div>
+<style>
+  .hideflag0 {
+    display: none
+  }
+</style>
+<script>
+  // for each
+
+  jQuery(".proplisting").each(function() {
+
+
+
+    closingdate = jQuery(this).data('closingdate');
+
+    if (closingdate !== '') {
+      // get today's date
+      today = Math.floor(Date.now() / 1000);
+      //console.log(today)
+
+      var date = new Date(closingdate * 1000);
+      var hours = date.getHours();
+      var minutes = "0" + date.getMinutes();
+      var days = date.getDate();
+      var months = (date.getMonth() + 1);
+      var years = date.getFullYear();
+
+      outputtext = '';
+      closingdateformatted = days + '/' + months + '/' + years + ' at ' + hours + ':' + minutes.substr(-2);
+      daydiff = Math.round((closingdate - today) / (60 * 60 * 24));
+      if (daydiff < 0) {
+        outputtext = "";
+        closingdateformatted = '';
+        jQuery(this).find(".closinginfo").hide();
+        jQuery(this).find(".closingtag").hide();
+      }
+      if (daydiff == 0) {
+        outputtext = "Closing date today"
+      }
+      if (daydiff == 1) {
+        outputtext = daydiff + " day to closing date"
+      }
+      if (daydiff > 1) {
+        outputtext = daydiff + " days to closing date"
+      }
+
+
+      console.log(daydiff);
+
+      jQuery(this).find(".closingMessage").text(outputtext);
+      jQuery(this).find(".closingDate").text(closingdateformatted);
+    }
+
+  });
+</script>

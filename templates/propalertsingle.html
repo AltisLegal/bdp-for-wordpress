@@ -1,0 +1,365 @@
+<div class="x-container max width wpb_row">
+  <div class="x-column x-sm vc x-1-1 bdpsearchform" style=""> <a class="close ss-delete"></a>
+    <h2>Set up a property Alert</h2>
+    <p>Complete the form below by registering your contact details and the requirements for your next property. We will email you with the details of any properties that match and you can change your search criteria or unsubscribe at any time.</p>
+    <div class="" id="matchEnquiry" tabindex="-1" role="dialog" aria-labelledby="matchEnquiry" aria-hidden="true">
+      <form id="matchRequest" class="form-horizontal bdf-requestMatchForm bdpsearchform">
+        <div class="bdf-errorMsg bdd-hide alert alert-danger" role="alert"> The fields marked require information: </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="firstName" class="labelsmall">First Name</label>
+              <input class="form-control input-lg" name="firstName" placeholder="Enter first name " type="text">
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="name" class="labelsmall">Last Name</label>
+              <input class="form-control input-lg" name="lastName" placeholder="Enter last name " type="text">
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="email" class="labelsmall">Email address</label>
+              <input class="form-control input-lg" name="email" placeholder="Enter email " type="email">
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="tel" class="labelsmall">Tel.</label>
+              <input class="form-control input-lg" name="tel1" placeholder="Enter phone number " type="text">
+            </div>
+          </div>
+        </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-1">
+            <div class="form-group">
+              <label for="message" class="labelsmall">Message</label>
+              <textarea class="form-control input-lg" name="message" placeholder="Type a message" rows="7"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="propertyTypes" class="labelsmall">Property Type</label>
+              <select name="propertyTypes">
+                
+                                  
+			{pTypeOptions}
+			
+                                
+              </select>
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="minPrice" class="labelsmall">Minimum Price</label>
+              <select name="minPrice">
+                
+                                  
+			{minPriceOptionsSale}
+			
+                                
+              </select>
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="maxPrice" class="labelsmall">Maximum Price</label>
+              <select name="maxPrice">
+                
+                                  
+			{maxPriceOptionsSale}
+			
+                                
+              </select>
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <label for="bedRoomsMin" class="labelsmall">Minumum no. of bedrooms</label>
+              <select name="bedRoomsMin">
+                
+                                  
+			{minBedOptions}
+			
+                                
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-2">
+            <div class="form-group">
+              <label for="districtareas" class="labelsmall">Choose an area</label>
+              <select name="districtareas" id="districtareas">
+                <option value="">Select an area</option>
+                <option value="edcc">Edinburgh City Centre</option>
+                <option value="ede">Edinburgh East</option>
+                <option value="edn">Edinburgh North</option>
+                <option value="ednw">Edinburgh North West</option>
+                <option value="es">Edinburgh South</option>
+                <option value="esw">Edinburgh South West</option>
+                <option value="ew">Edinburgh West</option>
+              </select>
+            </div>
+          </div>
+          <div class="x-column x-sm x-1-2">
+            <div class="form-group">
+              <label for="districtareas" class="labelsmall">Choose a district</label>
+              <select name="districts" id="districtoptions">
+                <option value="">Choose an area first</option>
+                
+            
+              
+			{districtOptions}
+			
+            
+                                
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="x-container wpb_row">
+          <div class="x-column x-sm x-1-4">
+            <div class="form-group">
+              <input class="form-control input-lg" name="transType" value="sale" type="hidden">
+              <button type="submit" class="btn btn-default bdf-Submit">Register Now</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>edcc = {
+	"Edinburgh City Centre, All Areas":"Edinburgh City Centre",
+"Belford":"Belford, Edinburgh City Centre",
+"Bellevue":"Bellevue, Edinburgh City Centre",
+"Broughton":"Broughton, Edinburgh City Centre",
+"Calton":"Calton, Edinburgh City Centre",
+"Canongate":"Canongate, Edinburgh City Centre",
+"Canonmills":"Canonmills, Edinburgh City Centre",
+"Comely Bank":"Comely Bank, Edinburgh City Centre",
+"Dean":"Dean, Edinburgh City Centre",
+"Fountainbridge":"Fountainbridge, Edinburgh City Centre",
+"Grassmarket":"Grassmarket, Edinburgh City Centre",
+"Haymarket":"Haymarket, Edinburgh City Centre",
+"Lauriston":"Lauriston, Edinburgh City Centre",
+"New Town":"New Town, Edinburgh City Centre",
+"Old Town":"Old Town, Edinburgh City Centre",
+"Pleasance":"Pleasance, Edinburgh City Centre",
+"South Side":"South Side, Edinburgh City Centre",
+"St Leonards":"St Leonards, Edinburgh City Centre",
+"Stockbridge":"Stockbridge, Edinburgh City Centre",
+"Tollcross":"Tollcross, Edinburgh City Centre",
+"West End":"West End, Edinburgh City Centre"
+};
+
+
+
+eds = {
+	"Edinburgh South , All Areas":"Edinburgh South",
+"Alnwickhill":"Alnwickhill, Edinburgh South",
+"Blacket":"Blacket, Edinburgh South",
+"Blackford":"Blackford, Edinburgh South",
+"Braids":"Braids, Edinburgh South",
+"Bruntsfield":"Bruntsfield, Edinburgh South",
+"Buckstone":"Buckstone, Edinburgh South",
+"Burdiehouse":"Burdiehouse, Edinburgh South",
+"Colinton":"Colinton, Edinburgh South",
+"Colinton Mains":"Colinton Mains, Edinburgh South",
+"Comiston":"Comiston, Edinburgh South",
+"Craiglockhart":"Craiglockhart, Edinburgh South",
+"Fairmilehead":"Fairmilehead, Edinburgh South",
+"Ferniehill":"Ferniehill, Edinburgh South",
+"Gilmerton":"Gilmerton, Edinburgh South",
+"Glenlockhart":"Glenlockhart, Edinburgh South",
+"Gracemount":"Gracemount, Edinburgh South",
+"Grange":"Grange, Edinburgh South",
+"Greenbank":"Greenbank, Edinburgh South",
+"Greenhill":"Greenhill, Edinburgh South",
+"Howdenhall":"Howdenhall, Edinburgh South",
+"Kingsknowe":"Kingsknowe, Edinburgh South",
+"Liberton":"Liberton, Edinburgh South",
+"Little France":"Little France, Edinburgh South",
+"Marchmont":"Marchmont, Edinburgh South",
+"Mayfield":"Mayfield, Edinburgh South",
+"Merchiston":"Merchiston, Edinburgh South",
+"Moredun":"Moredun, Edinburgh South",
+"Morningside":"Morningside, Edinburgh South",
+"Mortonhall":"Mortonhall, Edinburgh South",
+"Newington":"Newington, Edinburgh South",
+"Oxgangs":"Oxgangs, Edinburgh South",
+"Peffermill":"Peffermill, Edinburgh South",
+"Polwarth":"Polwarth, Edinburgh South",
+"Prestonfield":"Prestonfield, Edinburgh South",
+"Priestfield":"Priestfield, Edinburgh South",
+"Sciennes":"Sciennes, Edinburgh South",
+"Shandon":"Shandon, Edinburgh South",
+"Southhouse":"Southhouse, Edinburgh South",
+"Swanston":"Swanston, Edinburgh South",
+"The Inch":"The Inch, Edinburgh South",
+"The Meadows":"The Meadows, Edinburgh South",
+"Viewforth":"Viewforth, Edinburgh South"
+};
+
+edsw = {
+	"Edinburgh South West, All Areas":"Edinburgh South West",
+"Baberton":"Baberton, Edinburgh South West",
+"Balerno":"Balerno, Edinburgh South West",
+"Currie":"Currie, Edinburgh South West",
+"Dalmahoy":"Dalmahoy, Edinburgh South West",
+"Juniper Green":"Juniper Green, Edinburgh South West"
+};
+edn = {
+	"Edinburgh North, All Areas":"Edinburgh North",
+"Barnton":"Barnton, Edinburgh North",
+"Blackhall":"Blackhall, Edinburgh North",
+"Boswall":"Boswall, Edinburgh North",
+"Cammo":"Cammo, Edinburgh North",
+"Clermiston":"Clermiston, Edinburgh North",
+"Corstorphine":"Corstorphine, Edinburgh North",
+"Craigleith":"Craigleith, Edinburgh North",
+"Cramond":"Cramond, Edinburgh North",
+"Crewe":"Crewe, Edinburgh North",
+"Davidsons Mains":"Davidsons Mains, Edinburgh North",
+"Drum brae":"Drum brae, Edinburgh North",
+"Drylaw":"Drylaw, Edinburgh North",
+"East Craigs":"East Craigs, Edinburgh North",
+"Easter Drylaw":"Easter Drylaw, Edinburgh North",
+"Fettes":"Fettes, Edinburgh North",
+"Granton":"Granton, Edinburgh North",
+"Inverleith":"Inverleith, Edinburgh North",
+"Maybury":"Maybury, Edinburgh North",
+"Muirhouse":"Muirhouse, Edinburgh North",
+"Murrayfield":"Murrayfield, Edinburgh North",
+"Orchard Brae":"Orchard Brae, Edinburgh North",
+"Pilton":"Pilton, Edinburgh North",
+"Ravelston":"Ravelston, Edinburgh North",
+"Silverknowes":"Silverknowes, Edinburgh North",
+"South Gyle":"South Gyle, Edinburgh North",
+"Trinity":"Trinity, Edinburgh North",
+"Warriston":"Warriston, Edinburgh North",
+"West Pilton":"West Pilton, Edinburgh North",
+"Wester Coates":"Wester Coates, Edinburgh North"
+};
+
+ednw = {
+	"Edinburgh North WestAll Areas":"Edinburgh North West",
+"Dalmeny":"Dalmeny, Edinburgh North West",
+"Gogar":"Gogar, Edinburgh North West",
+"Hermiston":"Hermiston, Edinburgh North West",
+"Ingliston":"Ingliston, Edinburgh North West",
+"Kirkliston":"Kirkliston, Edinburgh North West",
+"Newbridge":"Newbridge, Edinburgh North West",
+"Ratho":"Ratho, Edinburgh North West",
+"Ratho Station":"Ratho Station, Edinburgh North West",
+"South Queensferry":"South Queensferry, Edinburgh North West"
+};
+ede = {
+	"Edinburgh East, All Areas":"Edinburgh East",
+"Abbeyhill":"Abbeyhill, Edinburgh East",
+"Bingham":"Bingham, Edinburgh East",
+"Bonnington":"Bonnington, Edinburgh East",
+"Brunstane":"Brunstane, Edinburgh East",
+"Brunswick":"Brunswick, Edinburgh East",
+"Craigentinny":"Craigentinny, Edinburgh East",
+"Craigmillar":"Craigmillar, Edinburgh East",
+"Duddingston":"Duddingston, Edinburgh East",
+"Duddingston Village":"Duddingston Village, Edinburgh East",
+"Easter Road":"Easter Road, Edinburgh East",
+"Hillside":"Hillside, Edinburgh East",
+"Holyrood":"Holyrood, Edinburgh East",
+"Joppa":"Joppa, Edinburgh East",
+"Leith":"Leith, Edinburgh East",
+"Leith Links":"Leith Links, Edinburgh East",
+"Leith Walk":"Leith Walk, Edinburgh East",
+"Lochend":"Lochend, Edinburgh East",
+"Marionville":"Marionville, Edinburgh East",
+"Meadowbank":"Meadowbank, Edinburgh East",
+"Mountcastle":"Mountcastle, Edinburgh East",
+"Newcraighall":"Newcraighall, Edinburgh East",
+"Newhaven":"Newhaven, Edinburgh East",
+"Niddrie":"Niddrie, Edinburgh East",
+"Northfield":"Northfield, Edinburgh East",
+"Piersfield":"Piersfield, Edinburgh East",
+"Piershill":"Piershill, Edinburgh East",
+"Pilrig":"Pilrig, Edinburgh East",
+"Portobello":"Portobello, Edinburgh East",
+"Restalrig":"Restalrig, Edinburgh East",
+"The Jewel":"The Jewel, Edinburgh East",
+"The Shore":"The Shore, Edinburgh East",
+"The Wisp":"The Wisp, Edinburgh East",
+"Willowbrae":"Willowbrae, Edinburgh East"
+};
+
+edw = {
+	"Edinburgh West, All Areas":"Edinburgh West",
+"Ardmillan":"Ardmillan, Edinburgh West",
+"Balgreen":"Balgreen, Edinburgh West",
+"Broomhouse":"Broomhouse, Edinburgh West",
+"Carrick Knowe":"Carrick Knowe, Edinburgh West",
+"Chesser":"Chesser, Edinburgh West",
+"Dalry":"Dalry, Edinburgh West",
+"Gorgie":"Gorgie, Edinburgh West",
+"Longstone":"Longstone, Edinburgh West",
+"Murrayburn":"Murrayburn, Edinburgh West",
+"Parkhead":"Parkhead, Edinburgh West",
+"Redhall":"Redhall, Edinburgh West",
+"Roseburn":"Roseburn, Edinburgh West",
+"Saughton":"Saughton, Edinburgh West",
+"Saughtonhall":"Saughtonhall, Edinburgh West",
+"Sighthill":"Sighthill, Edinburgh West",
+"Slateford":"Slateford, Edinburgh West",
+"Stenhouse":"Stenhouse, Edinburgh West",
+"Westburn":"Westburn, Edinburgh West",
+"Wester Hailes":"Wester Hailes, Edinburgh West"
+};
+
+$el = jQuery("#districtoptions");
+
+
+jQuery( "#districtareas" ).change(function() {
+ 
+areaselected = jQuery( "#districtareas" ).val();
+
+
+switch(areaselected) {
+    case "edcc":
+        newOptions = edcc;
+
+        break;
+    case "eds":
+        newOptions = eds;
+        break;
+	case "edsw":
+        newOptions = edsw;
+        break;
+	case "edn":
+        newOptions = edn;
+        break;
+    case "ednw":
+        newOptions = ednw;
+        break;
+	case "ede":
+        newOptions = ede;
+        break;
+	case "edw":
+        newOptions = edw;
+        break;
+    default:
+        newOptions = edcc;
+}
+
+
+
+$el.empty(); // remove old options
+
+jQuery.each(newOptions, function(value,key) {
+
+  $el.append(jQuery("<option></option>").attr("value", key).text(value));
+});
+});
+</script> 
+  </div>
+</div>

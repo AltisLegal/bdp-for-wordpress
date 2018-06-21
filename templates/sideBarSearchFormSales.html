@@ -1,0 +1,438 @@
+<div class="modal" id="matchEnquiry" tabindex="-1" role="dialog" aria-labelledby="matchEnquiry" aria-hidden="true" style="display:none">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Set up a property alert</h4>
+      </div>
+      <div class="modal-body">
+        <div class="aformcontainer">
+          <form id="matchRequest" class="form-horizontal bdf-requestMatchForm">
+            <div class="bdf-errorMsg bdd-hide alert alert-danger" role="alert"> The fields marked require information: </div>
+            <div class="aform__field">
+              <label for="name">First Name</label>
+              <input class="form-control input-lg" name="firstName" placeholder="Enter your first name*" type="text">
+            </div>
+            <div class="aform__field">
+              <label for="name">Last Name</label>
+              <input class="form-control input-lg" name="lastName" placeholder="Enter your last name*" type="text">
+            </div>
+            <div class="aform__field">
+              <label for="email">Email address</label>
+              <input class="form-control input-lg" name="email" placeholder="Enter email*" type="email">
+            </div>
+            <div class="aform__field">
+              <label for="tel">Tel.</label>
+              <input class="form-control input-lg" name="tel1" placeholder="Enter phone number*" type="text">
+            </div>
+            <div class="aform__field">
+              <label for="message">Message</label>
+              <textarea class="form-control input-lg" name="message" placeholder="Type a message" rows="7"></textarea>
+            </div>
+            <!--          <div class="form-group">
+            <label for="propertyTypes">Property Type</label>
+            <select name="propertyTypes">
+
+			{pTypeOptions}
+
+            </select>
+          </div>-->
+            <div class="aform__field">
+              <label for="minPrice">Minimum Price</label>
+              <select name="minPrice">
+
+
+			{minPriceOptionsSale}
+
+
+            </select>
+            </div>
+            <div class="aform__field">
+              <label for="maxPrice">Maximum Price</label>
+              <select name="maxPrice">
+
+
+			{maxPriceOptionsSale}
+
+
+            </select>
+            </div>
+            <div class="aform__field">
+              <label for="bedRoomsMin">Minumum no. of bedrooms</label>
+              <select name="bedRoomsMin">
+
+
+			{minBedOptions}
+
+
+            </select>
+            </div>
+            <!--          <div class="form-group">
+            <label for="bedRoomsMax">Maximum no. of bedrooms</label>
+            <select name="bedRoomsMax">
+
+			{maxBedOptions}
+
+            </select>
+          </div>-->
+            <div class="aform__field">
+              <label for="districtareas">Choose an area</label>
+              <select name="districtareas" id="districtareas">
+              <option value="">Select</option>
+              <option value="edcc">Edinburgh City Centre</option>
+              <option value="ede">Edinburgh East</option>
+              <option value="edn">Edinburgh North</option>
+              <option value="ednw">Edinburgh North West</option>
+              <option value="es">Edinburgh South</option>
+              <option value="esw">Edinburgh South West</option>
+              <option value="ew">Edinburgh West</option>
+            </select>
+            </div>
+            <div class="aform__field">
+              <label for="districtareas">Choose a district</label>
+              <select name="districts" id="districtoptions">
+            </select>
+            </div>
+            <!--          <div class="form-group">
+            <label for="keywords">Keywords</label>
+            <input class="form-control input-lg" name="keywords" placeholder="Enter keywords" type="text">
+          </div>-->
+
+            <!--  -->
+            <div class="aform__field">
+              <input class="form-control input-lg" name="transType" value="sale" type="hidden">
+              <button type="submit" class="btn btn-default bdf-Submit">Send message</button>
+              <button type="button" class="btn btn-default bdf-cancel" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="commentsdcoy">
+              <label class="col-sm-3 control-label" for="comments">Leave next field empty</label>
+              <input type="text" name="comments">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sformcontainer bdpform">
+  <form role="form" method="post" action="{formActionPathSales}" class="bdf-searchForm bdpsearchform" id="searchform">
+    <div class="keyword sform__field" style="">
+      <label for="keysearch">Location</label>
+      <input type="text" class="search-location" name="keysearch" value="{keysearch_Value}" data-default="Location" placeholder="e.g. street name, postcode or area" />
+    </div>
+    <div class="price sform__field">
+      <div class="col1">
+        <label>Price between</label>
+        <select name="pricefrom" class="form-control">{minPriceOptionsSale}</select>
+      </div>
+      <div class="col2">
+        <select name="priceto" class="form-control">{maxPriceOptionsSale}</select>
+      </div>
+    </div>
+    <div class="bedrooms sform__field"> <label>Bedrooms</label>
+      <select name="bedRoomsMin" id="bedRoomsMin">{minBedOptions}</select>
+      <!--<input id="bedRoomsMax" name="bedRoomsMax" type="hidden" value="6">-->
+    </div>
+    <!--    <div class="hideme x-container wpb_row saleoptions">
+      <div class="x-column x-sm x-1-1" style="">
+      <label for="property_type" class="labelsmall">PROPERTY TYPE</label>
+        <select name="property_type">{pTypeOptions}</select>
+      </div>-->
+    <div class="proptype sform__field"> <label>Property Type</label>
+      <select name="property_type">{pTypeOptions}</select>
+    </div>
+    <div class="searchbuttons sform__field">
+      <button class="property-search-submit bdf-Submit"><span>Search</span></button>
+    </div>
+
+    <!--<div class="x-column x-sm x-1-1" style="">
+      <label for="pricefrom" class="labelsmall">MIN PRICE</label>
+        <select name="pricefrom" class="form-control">
+
+		                    {minPriceOptionsSale}
+
+        </select>
+      </div>
+      <div class="x-column x-sm x-1-1" style="">
+       <label for="priceto" class="labelsmall">MAX PRICE</label>
+        <select name="priceto" class="form-control">
+
+		                    {maxPriceOptionsSale}
+
+        </select>
+      </div>-->
+    <!--      <div class="x-column x-sm x-1-1" style="">
+      <label for="bedRoomsMin" class="labelsmall">BEDROOMS</label>
+        <select name="bedRoomsMin" id="bedRoomsMin">
+
+     		{minBedOptions}
+
+        </select>
+        <input id="bedRoomsMax" name="bedRoomsMax" type="hidden" value="6">
+      </div>-->
+
+    <!--   <div class="x-column x-sm x-1-1">
+      <label for="ls" class="labelsmall">AREA</label>
+      <input class="form-control" type="text" name="ls" value="{location_Value}" placeholder="Enter location"/>
+    </div>-->
+    <!--    <div class="x-column x-sm x-1-1" style="">
+    <label for="lrad" class="labelsmall">SEARCH RADIUS</label>
+      <select name="lrad" id="lrad"  class="form-control" >
+
+          {radOptions}
+
+      </select>
+      <input id="lru" name="lru" type="hidden" value="miles">
+      <input id="tt" name="tt" type="hidden" value="" >
+    </div>-->
+    <div class=" sform__field">
+      <label for="nv">
+      <input type="checkbox" {nv_Value} name="nv" id="nv" value="on">
+      Exclude Under Offer and Sold Properties</label>
+      <div class="cleared"></div>
+    </div>
+    <!--     <div  class="x-column x-sm x-1-1" style="padding-top:30px;"><button class="property-search-submit bdf-Submit"><span>Search</span></button></div>-->
+    <div class="cleared"></div>
+</div>
+
+<!--   <input type="hidden" name="pricefrom" value="{minprice_Value}">
+    <input type="hidden" name="priceto" value="{maxprice_Value}">-->
+</form>
+<div class="cleared"></div>
+
+<script type="text/javascript">
+
+
+  edcc = {
+    "All Areas": "Edinburgh City Centre",
+    "Belford": "Belford",
+    "Bellevue": "Bellevue",
+    "Broughton": "Broughton",
+    "Calton": "Calton",
+    "Canongate": "Canongate",
+    "Canonmills": "Canonmills",
+    "Comely Bank": "Comely Bank",
+    "Dean": "Dean",
+    "Fountainbridge": "Fountainbridge",
+    "Grassmarket": "Grassmarket",
+    "Haymarket": "Haymarket",
+    "Lauriston": "Lauriston",
+    "New Town": "New Town",
+    "Old Town": "Old Town",
+    "Pleasance": "Pleasance",
+    "South Side": "South Side",
+    "St Leonards": "St Leonards",
+    "Stockbridge": "Stockbridge",
+    "Tollcross": "Tollcross",
+    "West End": "West End"
+  };
+
+
+
+  eds = {
+    "All Areas": "Edinburgh South",
+    "Alnwickhill": "Alnwickhill",
+    "Blacket": "Blacket",
+    "Blackford": "Blackford",
+    "Braids": "Braids",
+    "Bruntsfield": "Bruntsfield",
+    "Buckstone": "Buckstone",
+    "Burdiehouse": "Burdiehouse",
+    "Colinton": "Colinton",
+    "Colinton Mains": "Colinton Mains",
+    "Comiston": "Comiston",
+    "Craiglockhart": "Craiglockhart",
+    "Fairmilehead": "Fairmilehead",
+    "Ferniehill": "Ferniehill",
+    "Gilmerton": "Gilmerton",
+    "Glenlockhart": "Glenlockhart",
+    "Gracemount": "Gracemount",
+    "Grange": "Grange",
+    "Greenbank": "Greenbank",
+    "Greenhill": "Greenhill",
+    "Howdenhall": "Howdenhall",
+    "Kingsknowe": "Kingsknowe",
+    "Liberton": "Liberton",
+    "Little France": "Little France",
+    "Marchmont": "Marchmont",
+    "Mayfield": "Mayfield",
+    "Merchiston": "Merchiston",
+    "Moredun": "Moredun",
+    "Morningside": "Morningside",
+    "Mortonhall": "Mortonhall",
+    "Newington": "Newington",
+    "Oxgangs": "Oxgangs",
+    "Peffermill": "Peffermill",
+    "Polwarth": "Polwarth",
+    "Prestonfield": "Prestonfield",
+    "Priestfield": "Priestfield",
+    "Sciennes": "Sciennes",
+    "Shandon": "Shandon",
+    "Southhouse": "Southhouse",
+    "Swanston": "Swanston",
+    "The Inch": "The Inch",
+    "The Meadows": "The Meadows",
+    "Viewforth": "Viewforth"
+  };
+
+  edsw = {
+    "All Areas": "Edinburgh South West",
+    "Baberton": "Baberton",
+    "Balerno": "Balerno",
+    "Currie": "Currie",
+    "Dalmahoy": "Dalmahoy",
+    "Juniper Green": "Juniper Green"
+  };
+  edn = {
+    "All Areas": "Edinburgh North",
+    "Barnton": "Barnton",
+    "Blackhall": "Blackhall",
+    "Boswall": "Boswall",
+    "Cammo": "Cammo",
+    "Clermiston": "Clermiston",
+    "Corstorphine": "Corstorphine",
+    "Craigleith": "Craigleith",
+    "Cramond": "Cramond",
+    "Crewe": "Crewe",
+    "Davidsons Mains": "Davidsons Mains",
+    "Drum brae": "Drum brae",
+    "Drylaw": "Drylaw",
+    "East Craigs": "East Craigs",
+    "Easter Drylaw": "Easter Drylaw",
+    "Fettes": "Fettes",
+    "Granton": "Granton",
+    "Inverleith": "Inverleith",
+    "Maybury": "Maybury",
+    "Muirhouse": "Muirhouse",
+    "Murrayfield": "Murrayfield",
+    "Orchard Brae": "Orchard Brae",
+    "Pilton": "Pilton",
+    "Ravelston": "Ravelston",
+    "Silverknowes": "Silverknowes",
+    "South Gyle": "South Gyle",
+    "Trinity": "Trinity",
+    "Warriston": "Warriston",
+    "West Pilton": "West Pilton",
+    "Wester Coates": "Wester Coates"
+  };
+
+  ednw = {
+    "All Areas": "Edinburgh North West",
+    "Dalmeny": "Dalmeny",
+    "Gogar": "Gogar",
+    "Hermiston": "Hermiston",
+    "Ingliston": "Ingliston",
+    "Kirkliston": "Kirkliston",
+    "Newbridge": "Newbridge",
+    "Ratho": "Ratho",
+    "Ratho Station": "Ratho Station",
+    "South Queensferry": "South Queensferry"
+  };
+  ede = {
+    "All Areas": "Edinburgh East",
+    "Abbeyhill": "Abbeyhill",
+    "Bingham": "Bingham",
+    "Bonnington": "Bonnington",
+    "Brunstane": "Brunstane",
+    "Brunswick": "Brunswick",
+    "Craigentinny": "Craigentinny",
+    "Craigmillar": "Craigmillar",
+    "Duddingston": "Duddingston",
+    "Duddingston Village": "Duddingston Village",
+    "Easter Road": "Easter Road",
+    "Hillside": "Hillside",
+    "Holyrood": "Holyrood",
+    "Joppa": "Joppa",
+    "Leith": "Leith",
+    "Leith Links": "Leith Links",
+    "Leith Walk": "Leith Walk",
+    "Lochend": "Lochend",
+    "Marionville": "Marionville",
+    "Meadowbank": "Meadowbank",
+    "Mountcastle": "Mountcastle",
+    "Newcraighall": "Newcraighall",
+    "Newhaven": "Newhaven",
+    "Niddrie": "Niddrie",
+    "Northfield": "Northfield",
+    "Piersfield": "Piersfield",
+    "Piershill": "Piershill",
+    "Pilrig": "Pilrig",
+    "Portobello": "Portobello",
+    "Restalrig": "Restalrig",
+    "The Jewel": "The Jewel",
+    "The Shore": "The Shore",
+    "The Wisp": "The Wisp",
+    "Willowbrae": "Willowbrae"
+  };
+
+  edw = {
+    "All Areas": "Edinburgh West",
+    "Ardmillan": "Ardmillan",
+    "Balgreen": "Balgreen",
+    "Broomhouse": "Broomhouse",
+    "Carrick Knowe": "Carrick Knowe",
+    "Chesser": "Chesser",
+    "Dalry": "Dalry",
+    "Gorgie": "Gorgie",
+    "Longstone": "Longstone",
+    "Murrayburn": "Murrayburn",
+    "Parkhead": "Parkhead",
+    "Redhall": "Redhall",
+    "Roseburn": "Roseburn",
+    "Saughton": "Saughton",
+    "Saughtonhall": "Saughtonhall",
+    "Sighthill": "Sighthill",
+    "Slateford": "Slateford",
+    "Stenhouse": "Stenhouse",
+    "Westburn": "Westburn",
+    "Wester Hailes": "Wester Hailes"
+  };
+
+  $el = jQuery("#districtoptions");
+
+
+  jQuery("#districtareas").change(function() {
+
+    areaselected = jQuery("#districtareas").val();
+
+
+    switch (areaselected) {
+      case "edcc":
+        newOptions = edcc;
+
+        break;
+      case "eds":
+        newOptions = eds;
+        break;
+      case "edsw":
+        newOptions = edsw;
+        break;
+      case "edn":
+        newOptions = edn;
+        break;
+      case "ednw":
+        newOptions = ednw;
+        break;
+      case "ede":
+        newOptions = ede;
+        break;
+      case "edw":
+        newOptions = edw;
+        break;
+      default:
+        newOptions = edcc;
+    }
+
+
+
+    jQuery("#districtoptions").empty(); // remove old options
+
+
+
+    jQuery.each(newOptions, function(value, key) {
+
+      jQuery("#districtoptions").append(jQuery("<option></option>").attr("value", key).text(value));
+    });
+  });
+</script>

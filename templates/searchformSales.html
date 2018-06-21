@@ -1,0 +1,90 @@
+<form role="form" method="post" action="{formActionPathSales}" class="bdf-searchForm ">
+  <div class="x-container wpb_row">
+    <div class="x-column x-sm x-1-6" style="">
+      <label for="keysearch" class="labelsmall">LOCATION</label>
+      <input type="text" class="search-location" name="keysearch" value="{keysearch_Value}" data-default="Location" placeholder="Street name, postcode, area"/>
+    </div>
+    <div class="x-column x-sm x-1-6" style="">
+      <label for="property_type" class="labelsmall">PROPERTY TYPE</label>
+      <select name="property_type">
+        
+        
+			{pTypeOptions}
+			
+      
+      </select>
+    </div>
+    <div class="x-column x-sm x-1-6" style="">
+      <label for="pricefrom" class="labelsmall">MIN PRICE</label>
+      <select name="pricefrom" class="form-control">
+        
+        
+		                    {minPriceOptionsSale}
+		                  
+      
+      </select>
+    </div>
+    <div class="x-column x-sm x-1-6" style="">
+      <label for="priceto" class="labelsmall">MAX PRICE</label>
+      <select name="priceto" class="form-control">
+        
+        
+		                    {maxPriceOptionsSale}
+		                  
+      
+      </select>
+    </div>
+    <div class="x-column x-sm x-1-6" style="">
+      <label for="bedRoomsMin" class="labelsmall">BEDROOMS</label>
+      <select name="bedRoomsMin">
+        
+        
+     		{minBedOptions}
+	  		
+      
+      </select>
+    </div>
+    <div class="x-column x-sm x-1-6" style="padding-top:36px;">
+      <button class="property-search-submit bdf-Submit"><span>Search</span></button>
+    </div>
+  </div>
+  <div class="x-container wpb_row hideme">
+    <div class="x-column x-sm x-1-6">
+      <label for="ls" class="labelsmall">ENTER LOCATION</label>
+      <input class="form-control" type="text" name="ls" value="{location_Value}" placeholder="Enter location" title="Enter Location"/>
+    </div>
+    <div class="x-column x-sm x-1-6" style="">
+      <label for="lrad" class="labelsmall">SEARCH RADIUS</label>
+      <select name="lrad" id="lrad"  class="form-control" >
+        
+        
+          {radOptions}
+        
+      
+      </select>
+      <input id="lru" name="lru" type="hidden" value="miles">
+    </div>
+    <div  class="x-column x-sm x-1-6"  style="padding-top:30px;">
+      <label for="nv" class="lh1">
+        <input type="checkbox" {nv_Value} name="nv" id="nv" value="on">
+        Exclude Under Offer, SSTC, etc?</label>
+      <div class="cleared"></div>
+    </div>
+  </div>
+</form>
+<div> <a href="#" class="advsearch ss-navigatedown"> ADVANCED OPTIONS</a> </div>
+<script type="text/javascript">
+
+
+jQuery(".hideme").hide();
+jQuery(".advsearch").toggle( function(){
+	jQuery(this).removeClass("ss-navigatedown").addClass("ss-navigateup").text("BASIC OPTIONS")
+	jQuery(".hideme").slideDown();
+}, function(){
+jQuery(".hideme").slideUp();
+jQuery(this).addClass("ss-navigatedown").removeClass("ss-navigateup").text("ADVANCED OPTIONS")
+});
+    
+var markerURL = '{markerURL}'; 
+var gmapStyle = '{gmapStyle}';
+</script>
